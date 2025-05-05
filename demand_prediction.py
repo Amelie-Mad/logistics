@@ -1,8 +1,13 @@
 import numpy as np
 import pandas as pd
+import utils
 
-pd.set_option('display.max_columns', None)  # show all columns
-pd.set_option('display.width', 1000)   
+medellin = (6.251290,-75.5812)
+bogota = (4.6100,-74.0833)
+
+dist, time = utils.get_distance(bogota, medellin) 
+print(f"Distance: {dist} km")
+print(f"Time: {time} h")
 
 data1 = pd.read_excel('Clientes Colombia Marzo 2.xlsx')
 data2 = pd.read_excel('Clientes Colombia Marzo 3 (1).xlsx')
