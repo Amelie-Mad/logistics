@@ -39,5 +39,3 @@ df = df.merge(coordinates_clients, how='inner', left_on=['Client_ID','Center_ID'
 # Translating boxes into hL
 df['ordered_volume'] = df['ordered_boxes'] * 0.0756
 
-# Saving the final dataframe
-df.to_csv('columbia_full_coordinates.csv', index=False)
