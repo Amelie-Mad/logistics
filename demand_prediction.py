@@ -39,3 +39,4 @@ df = df.merge(coordinates_clients, how='inner', left_on=['Client_ID','Center_ID'
 # Translating boxes into hL
 df['ordered_volume'] = df['ordered_boxes'] * 0.0756
 
+# Merge test
