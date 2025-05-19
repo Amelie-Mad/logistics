@@ -4,3 +4,6 @@ openpyxl
 ipykernel
 haversine
 requests
+ortools
+tqdm
+matplotlib

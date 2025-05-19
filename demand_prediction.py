@@ -11,4 +11,18 @@ print(f"Time: {time} h")
 
 df = pd.read_csv('subproblem.csv')
 
+# Get the distance between all customers and the depot, as well as between all customers
 
+depot = (df['Latitude_CD'].iloc[0], df['Longitude_CD'].iloc[0])
+print(depot)
+
+clients = (df[['Latitude_Client', 'Longitude_Client']].values)
+clients = np.unique(clients, axis=0)
+
+dist_matrix, time_matrix = utils.distance_time_matrix(depot, clients, sample_size = len(clients))
+
+print(dist_matrix)
+
+dist_matrix.to_csv('distance_matrix_subproblem.csv', index=False)
+time_matrix.to_csv('time_matrix_subproblem.csv', index=False)
+#distance_matrix_full.to_csv('distance_matrix_subproblem.csv', index=False)
